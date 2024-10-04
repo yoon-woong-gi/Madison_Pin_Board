@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{#  ID: qazhhhh password: 1234qwer!      #}
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <div style="text-align: center; max-width: 300px; margin: 4rem auto">
+        <div>
+            <h4>Login</h4>
+        </div>
+        <div>
+            <form action="" method = "post">
+                {% csrf_token %}
+                {#    {{ form }}   #}
+                {% bootstrap_form form %}
+
+                <input type= 'submit' class = "btn btn-primary rounded-pill col-6 mt-3">
+{#                col-12 가 부모넓이 100퍼를 가져감 mt는 마진탑3배로 설정#}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
