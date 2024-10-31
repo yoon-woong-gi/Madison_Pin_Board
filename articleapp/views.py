@@ -49,7 +49,7 @@ class ArticleUpdateView(UpdateView):
 
 @method_decorator(article_ownership_required, 'get')
 @method_decorator(article_ownership_required, 'post')
-class AriticleDeleteView(DeleteView):
+class ArticleDeleteView(DeleteView):
     model = Article
     context_object_name = 'target_article'
     success_url = reverse_lazy('articleapp:list')

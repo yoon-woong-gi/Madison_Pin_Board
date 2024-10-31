@@ -1,5 +1,4 @@
-from audioop import reverse
-
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView
 
