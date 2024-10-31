@@ -19,7 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from articleapp.views import ArticleListView
+
 urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'),
     # python manage.py createsuperuser 터미널에 입력해서 슈퍼유저를 생성해서 관리
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
