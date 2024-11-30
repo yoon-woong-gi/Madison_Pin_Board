@@ -4,7 +4,7 @@ WORKDIR /home/
 
 RUN git clone https://github.com/yoon-woong-gi/Madison_Pin_Board.git
 
-WORKDIR /home/pragment/
+WORKDIR /home/Madison_Pin_Board/
 
 RUN pip install -r requirements.txt
 
