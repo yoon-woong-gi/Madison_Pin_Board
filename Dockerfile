@@ -2,6 +2,8 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
+RUN echo "testing123"
+
 RUN git clone https://github.com/yoon-woong-gi/Madison_Pin_Board.git
 
 WORKDIR /home/Madison_Pin_Board/
@@ -13,6 +15,8 @@ RUN pip install gunicorn
 RUN echo "SECRET_KEY=django-insecure-5lw@xb2=h#5l0+n0vo)wbdb&5v34s2#71rpdhl9@39it_55jy+" > .env
 
 RUN python manage.py migrate
+
+RUN python manage.py collectstatic
 
 EXPOSE 8000
 
