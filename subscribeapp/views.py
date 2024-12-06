@@ -10,20 +10,15 @@ from subscribeapp.models import Subscription
 
 
 # Create your views here.
-
 @method_decorator(login_required, 'get')
 class SubscriptionView(RedirectView):
-
     def get_redirect_url(self, *args, **kwargs):
         return reverse('projectapp:detail', kwargs={'pk': self.request.GET.get('project_pk')})
 
     def get(self, request, *args, **kwargs):
-
         project = get_object_or_404(Project, pk=self.request.GET.get('project_pk'))
         user = self.request.user
-
-        subscription = Subscription.objects.filter(project=project,
-                                                   user=user)
+        subscription = Subscription.objects.filter(user=user, project=project)
 
         if subscription.exists():
             subscription.delete()
@@ -35,11 +30,11 @@ class SubscriptionView(RedirectView):
 @method_decorator(login_required, 'get')
 class SubscriptionListView(ListView):
     model = Article
-    context_object_name = 'articles_list'
+    context_object_name = 'article_list'
     template_name = 'subscribeapp/list.html'
-    paginate_by = 20
+    paginate_by = 5
 
     def get_queryset(self):
-        projects = Subscription.objects.filter(user=self.request.user).values_list("project")
+        projects = Subscription.objects.filter(user=self.request.user).values_list('project')
         article_list = Article.objects.filter(project__in=projects)
         return article_list

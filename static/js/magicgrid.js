@@ -268,13 +268,12 @@ MagicGrid.prototype.listen = function listen () {
   else { this.getReady(); }
 };
 
-
 let magicGrid = new MagicGrid({
-  container: ".container",
+  container: '.container',
   animate: true,
   gutter: 12,
   static: true,
-  useMin: true,
+  useMin: true
 });
 
 var masonrys = document.getElementsByTagName("img");
@@ -284,6 +283,5 @@ for (let i = 0; i < masonrys.length; i++) {
     magicGrid.positionItems();
   }, false);
 }
-
-
 magicGrid.listen();
+

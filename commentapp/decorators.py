@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
 
 from commentapp.models import Comment

@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DeleteView
@@ -9,13 +10,10 @@ from commentapp.models import Comment
 
 
 # Create your views here.
-
-
 class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentCreationForm
     template_name = 'commentapp/create.html'
-
     def form_valid(self, form):
         temp_comment = form.save(commit=False)
         temp_comment.article = Article.objects.get(pk=self.request.POST['article_pk'])
