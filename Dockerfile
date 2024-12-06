@@ -8,6 +8,8 @@ WORKDIR /home/Madison_Pin_Board/
 
 RUN pip install -r requirements.txt
 
+RUN pip install gunicorn
+
 RUN echo "SECRET_KEY=django-insecure-5lw@xb2=h#5l0+n0vo)wbdb&5v34s2#71rpdhl9@39it_55jy+" > .env
 
 RUN python manage.py migrate
