@@ -1,19 +1,19 @@
-.pragmatic_logo {
+.Madison_Pin_Board_logo {
     font-family: 'Lobster', sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-.pragmatic_footer_button{
+.Madison_Pin_Board_footer_button{
     font-size: .9rem;
 }
 
-.pragmatic_footer {
+.Madison_Pin_Board_footer {
     text-align: center;
     margin-top: 2rem;
 }
 
-.pragmatic_header {
+.Madison_Pin_Board_header {
     text-align: center;
     margin: 2rem 0;
 }
@@ -27,11 +27,11 @@ a:hover {
     text-decoration: none;
 }
 
-.pragmatic_header_nav {
+.Madison_Pin_Board_header_nav {
     margin: 0 0.5rem;
 }
 
-.pragmatic_header_navbar {
+.Madison_Pin_Board_header_navbar {
     margin: 1rem 0;
 }
 
